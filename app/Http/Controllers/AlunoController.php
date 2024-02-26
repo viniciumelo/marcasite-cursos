@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\CustomersFromView;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class AlunoController extends Controller
@@ -173,13 +174,11 @@ class AlunoController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new AlunosExport, 'alunos.xlsx');
+        return Excel::download(new CustomersFromView, 'alunos.xlsx');
     }
 
     public function exportPDF()
     {
-        $alunos = Aluno::all();
-        $pdf = PDF::loadView('alunos.pdf', compact('alunos'));
-        return $pdf->download('alunos.pdf');
+        return Excel::download(new CustomersFromView, 'alunos.pdf');
     }
 }
