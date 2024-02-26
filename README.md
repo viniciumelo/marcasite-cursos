@@ -18,4 +18,4 @@ Siga estas etapas para configurar o projeto:
 1. Clone o repositório do GitHub:
 
 ```bash
-git clone https://github.com/seu-usuario/marcasite-cursos.git
+git clone https://github.com/viniciumelo/marcasite-cursos.git
