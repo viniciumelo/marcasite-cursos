@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'tipo_usuario_id',
     ];
 
     /**
@@ -42,4 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Define o relacionamento com TipoUsuario.
+     */
+    public function tipoUsuario()
+    {
+        return $this->belongsTo(TipoUsuario::class);
+    }
 }
